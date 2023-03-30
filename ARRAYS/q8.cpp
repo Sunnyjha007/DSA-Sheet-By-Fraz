@@ -11,6 +11,37 @@ public:
        return ele;
     }
 };
+
+/*
+O(nlogn)
+class Solution {
+private:
+int count(vector<int>& nums,int num,int si,int ei){
+    int cnt = 0;
+    for(int i=si;i<=ei;i++){
+        if(nums[i]==num)cnt++;
+    }
+    return cnt;
+}
+int solve(vector<int>& nums,int si,int ei){
+    if(si==ei)return nums[si];
+    int mid = si + (ei-si)/2;
+    int leftmajority = solve(nums,si,mid);
+    int rightmajority = solve(nums,mid+1,ei);
+    if(leftmajority==rightmajority)return leftmajority;
+    int leftcnt = count(nums,leftmajority,si,mid);
+    int rightcnt = count(nums,rightmajority,mid+1,ei);
+    return leftcnt>rightcnt?leftmajority:rightmajority;
+}
+public:
+    int majorityElement(vector<int>& nums) {
+       int n = nums.size();
+       return solve(nums,0,n-1);
+    }
+};
+*/
+
+
 /*
 O(nlogn)
 int majorityElement(vector<int>& nums) {
