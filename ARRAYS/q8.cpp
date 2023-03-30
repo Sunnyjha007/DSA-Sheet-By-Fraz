@@ -1,5 +1,6 @@
 class Solution {
 public:
+    O(n)&&O(1)
     int majorityElement(vector<int>& nums) {
        int n = nums.size(),cnt=0,ele=0;
        for(int i=0;i<n;i++){
@@ -11,6 +12,7 @@ public:
     }
 };
 /*
+O(nlogn)
 int majorityElement(vector<int>& nums) {
        int n = nums.size(),i=0;
       sort(nums.begin(),nums.end());
@@ -25,6 +27,7 @@ int majorityElement(vector<int>& nums) {
     }
 */
 /*
+O(n)&&o(n)
 int majorityElement(vector<int>& nums) {
        int n = nums.size();
        unordered_map<int,int> mp;
@@ -33,13 +36,4 @@ int majorityElement(vector<int>& nums) {
        return -1;
     }
 */
-/*
- int n = nums.size();
-        int cnt=0,ele=0;
-        for(int i=0;i<n;i++){
-            if(cnt==0)ele = nums[i];
-            if(ele==nums[i])cnt++;
-            else cnt--;
-        }
-        return ele;
-*/
+
